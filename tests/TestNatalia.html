@@ -16,10 +16,42 @@
 
     <link rel="stylesheet" href="../Styles/Design1.css">
   </head>
-  <body>
-    <div id="ar-container"></div>
+    <body>
+    <div id="ar-container">
+      <div id="scan-effect"></div>
+    </div>
+<!-- LOADING CENTRADO -->
+<div id="ui-loading">
+
+  <div class="loader"></div>
+
+  <p>Cargando experiencia AR...</p>
+  <span class="loading-hint">Presiona "Iniciar cámara AR" para comenzar</span>
+
+</div>
+
+<!-- MENSAJES DE AR -->
+<div id="ar-ui">
+  <!--<button id="btn-change">COMER</button>-->
+  
+  <button id="btn-change"><span>COMER</span></button>
+
+  <div id="ui-camera" class="ar-state" style="display:none;">
+    Por favor permite el acceso a la cámara
+  </div>
+
+  <div id="ui-scanning" class="ar-state" style="display:none;">
+    Busca la imagen objetivo con la cámara
+  </div>
+
+  <div id="ui-detected" class="ar-state" style="display:none;">
+    ¡Target detectado!
+  </div>
+
+  </div>
 
     <div class="hud">
+      
       <section class="panel">
         <h1>MindAR + Three.js</h1>
         <p>
@@ -27,10 +59,11 @@
           El target se carga desde <strong>Assets/Targets/targets.mind</strong>.
         </p>
       </section>
-
+ 
       <section class="panel controls status">
         <button id="start-ar">Iniciar camara AR</button>
         <button id="stop-ar">Detener camara AR</button>
+        
         <p id="status-text">Esperando inicio.</p>
 
       </section>

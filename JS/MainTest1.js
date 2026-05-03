@@ -100,7 +100,7 @@
       if (!mindarThree) {
         mindarThree = new MindARThree({
         container,
-        imageTargetSrc: './Assets/Targets/targets2.mind',
+        imageTargetSrc: '../Assets/Targets/targets2.mind',
         uiScanning: false,
         uiLoading: false,
         maxTrack: 1,
