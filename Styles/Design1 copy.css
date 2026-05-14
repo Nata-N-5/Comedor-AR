@@ -1,0 +1,379 @@
+:root {
+        color-scheme: light;
+        --bg: #d9e6f2;
+        --panel: rgba(10, 24, 38, 0.82);
+        --text: #f4f7fb;
+        --accent: #ff7a18;
+        --accent-2: #ffd166;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background:
+          radial-gradient(circle at top, rgba(255, 209, 102, 0.35), transparent 30%),
+          linear-gradient(160deg, #edf4fb 0%, var(--bg) 55%, #b9cad8 100%);
+        overflow: hidden;
+      }
+
+      #ar-container {
+        position: fixed;
+        inset: 0;
+      }
+
+      .hud {
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        right: 16px;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: flex-start;
+        pointer-events: none;
+      }
+
+      .panel {
+        max-width: 260px;           /* antes 460px */
+        padding: 10px 12px;         /* menos espacio interno */
+        border-radius: 14px;     
+        background: var(--panel);
+        color: var(--text);
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+        pointer-events: auto;
+      }
+      
+
+      .panel h1 {
+        margin: 0 0 8px;
+        font-size: 1.2rem;
+      }
+
+      .panel p {
+        margin: 0;
+        line-height: 1.45;
+        font-size: 0.95rem;
+      }
+
+      .controls {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        align-items: stretch;
+        
+      }
+
+      /* BOTONES SOLO DE ESA SECCIÓN */
+.controls button {
+  padding: 6px 10px;          /* más pequeños */
+  font-size: 0.75rem;         /* texto más chico */
+  border-radius: 999px;
+}
+
+/* TEXTO DE ESTADO MÁS CHIQUITO */
+#status-text {
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+/* OPCIONAL: hacer todo el bloque menos ancho visualmente */
+.status {
+  min-width: 160px;           /* antes 220px */
+}
+
+      button {
+        border: 0;
+        border-radius: 999px;
+        padding: 12px 18px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        cursor: pointer;
+        color: #112033;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      }
+
+      button:disabled {
+        opacity: 0.6;
+        cursor: wait;
+      }
+
+      .status {
+        min-width: 220px;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .hud {
+          flex-direction: column;
+        }
+
+        .panel,
+        .status {
+          max-width: none;
+          width: 100%;
+        }
+      }
+
+
+
+
+
+  /*PANTALLA DE CARGAAAA*/
+ 
+.loader{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+
+  border: 4px solid rgba(255, 255, 255, 0.15);
+  border-top: 4px solid #4fd1ff;
+  border-right: 4px solid #7b61ff;
+
+  animation: ar-spin 1.2s linear infinite;
+
+  margin: 0 auto 20px auto;
+}
+
+@keyframes ar-spin{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.loading-hint{
+  display:block;
+  margin-top:10px;
+  font-size:14px;
+  opacity:0.8;
+}
+
+#ui-loading{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: rgba(0,0,0,0.75);
+  color: white;
+
+  padding: 40px 60px;
+  border-radius: 20px;
+
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+
+  z-index: 20;
+  box-shadow: 0 30px 30px rgba(0,0,0,0.4);
+  backdrop-filter: blur(8px);
+}
+
+#ar-ui{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none; /* para que no bloquee la cámara */
+}
+
+.ar-state{
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 16px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  min-width: 220px;
+}
+
+/*BOTON FUTURISTA COOL BV*/
+/* animación flotante */
+
+
+#btn-change {
+  pointer-events: auto;
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 14px 40px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 3px;
+
+  color: #e6faff;
+  /*ajusta el coso de transparecia inicial*/
+ background: rgba(79, 208, 255, 0);
+
+  border: 2px solid #4fd1ff;
+  border-radius: 0;
+
+  /* forma futurista */
+ clip-path: polygon(
+  8% 0%, 92% 0%, 
+  100% 30%, 100% 70%, 
+  92% 100%, 8% 100%, 
+  0% 70%, 0% 30%
+);
+
+  box-shadow:
+    0 0 12px #4fd1ff,
+    inset 0 0 12px rgba(79, 209, 255, 0.4);
+
+  transition: all 0.25s ease;
+
+  animation: floatTap 1.5s ease-in-out infinite;
+}
+
+/* TEXTO */
+#btn-change span {
+  position: relative;
+  z-index: 2;
+}
+
+/* líneas principales */
+#btn-change::before,
+#btn-change::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background: #4fd1ff;
+  box-shadow: 0 0 6px #4fd1ff;
+}
+
+/* línea superior izquierda */
+#btn-change::before {
+  top: -8px;
+  left: 20px;
+  width: 50px;
+}
+
+/* línea inferior derecha */
+#btn-change::after {
+  bottom: -8px;
+  right: 20px;
+  width: 50px;
+}
+
+#btn-change span::before,
+#btn-change span::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 25px;
+  background: #4fd1ff;
+  box-shadow: 0 0 6px #4fd1ff;
+}
+
+/* izquierda */
+#btn-change span::before {
+  top: 50%;
+  left: -35px;
+  transform: translateY(-50%);
+}
+
+/* derecha */
+#btn-change span::after {
+  top: 50%;
+  right: -35px;
+  transform: translateY(-50%);
+}
+
+
+#btn-change::before {
+  box-shadow:
+    0 0 6px #4fd1ff,
+    55px 0 0 0 #4fd1ff; /* puntico extra */
+}
+
+#btn-change::after {
+  box-shadow:
+    0 0 6px #4fd1ff,
+    -55px 0 0 0 #4fd1ff;
+}
+
+#btn-change:hover {
+  background: rgba(79, 209, 255, 0.12);
+
+  box-shadow:
+    0 0 25px #4fd1ff,
+    inset 0 0 18px rgba(79, 209, 255, 0.8);
+
+  transform: translateX(-50%) scale(1.05);
+}
+
+
+@keyframes floatTap {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-6px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+#btn-change:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  filter: grayscale(20%);
+  box-shadow: none;
+}
+
+
+
+/*SCANEERR*/
+#scan-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: none;
+}
+
+/* línea que baja */
+#scan-effect::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #00e5ff,
+    transparent
+  );
+
+  box-shadow: 0 0 15px #00e5ff;
+
+  animation: scanMove 2s linear infinite;
+}
+
+/* animación */
+@keyframes scanMove {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
