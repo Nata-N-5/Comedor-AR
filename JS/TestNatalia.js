@@ -15,6 +15,7 @@ const uiCamera = document.querySelector('#ui-camera');
 const uiScanning = document.querySelector('#ui-scanning');
 const uiDetected = document.querySelector('#ui-detected');
 const loadingTitle = uiLoading.querySelector('h1');
+const changeButtonLabel = changeButton.querySelector('span');
 
 const eatSound = new Audio('../Assets/eat.mp3');
 const gltfLoader = new GLTFLoader();
@@ -76,6 +77,10 @@ changeButton.style.display = 'none';
 
 const updateStatus = (message) => {
   statusText.textContent = message;
+};
+
+const updateChangeButtonLabel = (state) => {
+  changeButtonLabel.textContent = state && state.modelIndex === -1 ? 'REINICIAR' : 'COMER';
 };
 
 const setControlState = (state) => {
@@ -467,6 +472,7 @@ const clearTargetModels = (state) => {
 
   state.modelIndex = 0;
   state.isLoadingModel = false;
+  updateChangeButtonLabel(state);
 };
 
 const showTargetUi = (state) => {
@@ -476,6 +482,7 @@ const showTargetUi = (state) => {
   uiDetected.textContent = 'Target detectado: ' + state.config.title;
   changeButton.style.display = 'block';
   changeButton.disabled = true;
+  updateChangeButtonLabel(state);
 };
 
 const hideTargetUi = (state) => {
@@ -709,6 +716,7 @@ changeButton.addEventListener('click', () => {
   }
 
   if (state.modelIndex !== -1) {
+    updateChangeButtonLabel(state);
     loadModel(state, state.config.models[state.modelIndex]);
     return;
   }
@@ -718,6 +726,8 @@ changeButton.addEventListener('click', () => {
     state.anchor.group.remove(state.currentModel);
     state.currentModel = null;
   }
+
+  updateChangeButtonLabel(state);
 });
 
 setControlState('idle');

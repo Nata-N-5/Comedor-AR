@@ -177,11 +177,16 @@ body::after {
   left: 50%;
   top: clamp(340px, 66vh, 650px);
   z-index: 9;
+  box-sizing: border-box;
   display: grid;
+  align-content: center;
   justify-items: center;
   width: min(56vw, 560px);
+  max-width: calc(100vw - 24px);
+  max-height: calc(100svh - 132px);
   min-height: clamp(300px, 38vh, 450px);
   padding: clamp(28px, 4.5vw, 54px) clamp(24px, 5vw, 52px);
+  overflow: hidden;
   border: 1.5px solid var(--line);
   border-radius: clamp(28px, 5vw, 48px);
   color: var(--text);
@@ -553,7 +558,39 @@ body.ar-paused .tap-hint {
   #ui-loading {
     top: 64%;
     width: min(82vw, 420px);
-    min-height: 340px;
+    max-height: calc(100svh - 126px);
+    min-height: 0;
+    padding: 24px 22px;
+  }
+
+  body.ar-starting #ui-loading {
+    top: 54%;
+    width: min(86vw, 380px);
+    min-height: 0;
+  }
+
+  .scanner-badge {
+    width: clamp(82px, 24vw, 122px);
+    height: clamp(82px, 24vw, 122px);
+    margin-bottom: 12px;
+  }
+
+  .scanner-badge img {
+    width: clamp(40px, 11vw, 58px);
+    height: clamp(40px, 11vw, 58px);
+  }
+
+  #ui-loading h1 {
+    font-size: clamp(1.55rem, 7vw, 2.2rem);
+  }
+
+  .loading-line {
+    margin: 14px 0;
+  }
+
+  #status-text {
+    font-size: clamp(0.9rem, 4vw, 1.05rem);
+    line-height: 1.4;
   }
 }
 
@@ -584,8 +621,14 @@ body.ar-paused .tap-hint {
 
   #ui-loading {
     width: 88vw;
-    min-height: 350px;
-    padding: 32px 20px;
+    max-height: calc(100svh - 112px);
+    min-height: 0;
+    padding: 22px 18px;
     border-radius: 28px;
+  }
+
+  body.ar-starting #ui-loading {
+    width: 88vw;
+    padding: 20px 18px;
   }
 }
