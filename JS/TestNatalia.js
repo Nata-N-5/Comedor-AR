@@ -56,6 +56,25 @@ const targetConfigs = [
       { label: 'Energia', value: 72 },
       { label: 'Agua', value: 79 }
     ]
+  },
+  {
+    targetIndex: 2,
+    title: 'ARRACACHA',
+    statusLabel: 'arracacha',
+    skeletonPath: '../Assets/models/arracachaW.glb',
+    models: [
+      '../Assets/models/arracacha.glb',
+      '../Assets/models/arracacha3.glb',
+      '../Assets/models/arracacha5.glb',
+      '../Assets/models/arracacha6.glb',
+      '../Assets/models/arracacha7.glb',
+      '../Assets/models/arracacha8.glb'
+    ],
+    stats: [
+      { label: 'Potasio', value: 76 },
+      { label: 'Energia', value: 72 },
+      { label: 'Agua', value: 79 }
+    ]
   }
 ];
 
@@ -635,7 +654,7 @@ const startAR = async () => {
     if (!mindarThree) {
       mindarThree = new MindARThree({
         container,
-        imageTargetSrc: '../Assets/Targets/targetsZ2.mind',
+        imageTargetSrc: '../Assets/Targets/targetsW.mind',
         uiScanning: false,
         uiLoading: false,
         maxTrack: targetConfigs.length,
