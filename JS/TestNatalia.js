@@ -190,6 +190,7 @@ const createTargetState = (config) => ({
   loadTimeout: null,
   modelIndex: 0,
   isLoadingModel: false,
+  isSkeletonExpired: false,
   isVisible: false
 });
 
@@ -408,7 +409,7 @@ const pulseSkeleton = (state) => {
 const loadSkeleton = async (state) => {
   const model = await loadGltf(state.config.skeletonPath);
 
-  if (!state.isVisible) {
+  if (!state.isVisible || state.isSkeletonExpired || state.currentModel) {
     return;
   }
 
@@ -523,6 +524,7 @@ const clearTargetModels = (state) => {
 
   state.modelIndex = 0;
   state.isLoadingModel = false;
+  state.isSkeletonExpired = false;
   updateChangeButtonLabel(state);
 };
 
@@ -569,12 +571,15 @@ const handleTargetFound = (state) => {
 
   if (state.loadTimeout || state.currentModel || state.skeletonModel) return;
 
+  state.isSkeletonExpired = false;
+
   loadSkeleton(state).catch((error) => {
     console.error('Error al cargar skeleton:', error);
     updateStatus('No se pudo cargar el placeholder de ' + state.config.statusLabel + '.');
   });
 
   state.loadTimeout = setTimeout(() => {
+    state.isSkeletonExpired = true;
     fadeOutSkeleton(state, 600);
 
     setTimeout(() => {
