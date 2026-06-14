@@ -64,11 +64,43 @@ const targetConfigs = [
     skeletonPath: '../Assets/models/arracachaW.glb',
     models: [
       '../Assets/models/arracacha.glb',
-      '../Assets/models/arracacha3.glb',
       '../Assets/models/arracacha5.glb',
       '../Assets/models/arracacha6.glb',
       '../Assets/models/arracacha7.glb',
       '../Assets/models/arracacha8.glb'
+    ],
+    stats: [
+      { label: 'Potasio', value: 76 },
+      { label: 'Energia', value: 72 },
+      { label: 'Agua', value: 79 }
+    ]
+  },
+  {
+    targetIndex: 3,
+    title: 'ARVEJA',
+    statusLabel: 'Arveja',
+    skeletonPath: '../Assets/models/alverjaW.glb',
+    models: [
+      '../Assets/models/alverja.glb',
+      '../Assets/models/alverja1.glb',
+      '../Assets/models/alverja2.glb',
+      '../Assets/models/alverja3.glb'
+    ],
+    stats: [
+      { label: 'Potasio', value: 76 },
+      { label: 'Energia', value: 72 },
+      { label: 'Agua', value: 79 }
+    ]
+  },
+  {
+    targetIndex: 4,
+    title: 'YUCA',
+    statusLabel: 'yuca',
+    skeletonPath: '../Assets/models/yucaaW.glb',
+    models: [
+      '../Assets/models/yucaa.glb',
+      '../Assets/models/yucaa1.glb',
+      '../Assets/models/yucaa2.glb'
     ],
     stats: [
       { label: 'Potasio', value: 76 },
@@ -654,7 +686,7 @@ const startAR = async () => {
     if (!mindarThree) {
       mindarThree = new MindARThree({
         container,
-        imageTargetSrc: '../Assets/Targets/targetsW.mind',
+        imageTargetSrc: '../Assets/Targets/targetsF.mind',
         uiScanning: false,
         uiLoading: false,
         maxTrack: targetConfigs.length,
