@@ -107,6 +107,40 @@ const targetConfigs = [
       { label: 'Riego', value: 'Moderado' },
       { label: 'Profundidad', value: '5-10 cm' }
     ]
+  },
+  {
+    targetIndex: 5,
+    title: 'CREMA DE ARVEJA',
+    statusLabel: 'crema de arveja',
+    skeletonPath: '../Assets/models/cremaW.glb',
+    models: [
+      '../Assets/models/crema.glb',
+      '../Assets/models/crema1.glb',
+      '../Assets/models/crema2.glb',
+      '../Assets/models/crema3.glb',
+      '../Assets/models/crema4.glb'
+    ],
+    stats: [
+      { label: 'Tiempo de crecimiento', value: '8-12 meses' },
+      { label: 'Riego', value: 'Moderado' },
+      { label: 'Profundidad', value: '5-10 cm' }
+    ]
+  },
+  {
+    targetIndex: 6,
+    title: 'REPOLLO',
+    statusLabel: 'repollo',
+    skeletonPath: '../Assets/models/repolloW.glb',
+    models: [
+      '../Assets/models/repollo.glb',
+      '../Assets/models/repollo1.glb',
+      '../Assets/models/repollo2.glb'
+    ],
+    stats: [
+      { label: 'Tiempo de crecimiento', value: '8-12 meses' },
+      { label: 'Riego', value: 'Moderado' },
+      { label: 'Profundidad', value: '5-10 cm' }
+    ]
   }
 ];
 
@@ -419,6 +453,12 @@ const loadSkeleton = async (state) => {
 
   state.skeletonModel.scale.set(1, 1, 1);
   state.skeletonModel.position.set(0, 0, 0);
+  if (state.config.targetIndex !== 0) { // todos menos ZANAHORIA
+  state.skeletonModel.rotation.set(90, 0, 0);
+} else {
+  state.skeletonModel.rotation.set(0, 0, 0);
+}
+
   state.anchor.group.add(state.skeletonModel);
   pulseSkeleton(state);
 };
@@ -476,7 +516,12 @@ const loadModel = async (state, path) => {
     state.currentModel = model;
     state.currentModel.scale.set(1, 1, 1);
     state.currentModel.position.set(0, 0, 0);
-    state.currentModel.rotation.set(0, 0, 0);
+   // state.currentModel.rotation.set(0, 0, 0);
+    if (state.config.targetIndex !== 0) { // todos menos ZANAHORIA
+  state.currentModel.rotation.set(Math.PI / 2, 0, 0);
+} else {
+  state.currentModel.rotation.set(0, 0, 0);
+}
     state.anchor.group.add(state.currentModel);
     createSteamEffect(state);
   } catch (error) {
