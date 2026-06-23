@@ -35,9 +35,9 @@ const targetConfigs = [
       '../Assets/models/carrot5.glb'
     ],
     stats: [
-      { label: 'Vitamina A', value: 80 },
-      { label: 'Fibra', value: 60 },
-      { label: 'Agua', value: 88 }
+      { label: 'Tiempo de crecimiento', value: '70-90 dias' },
+      { label: 'Riego', value: '3 veces por semana' },
+      { label: 'Profundidad', value: '1-2 cm' }
     ]
   },
   {
@@ -52,9 +52,9 @@ const targetConfigs = [
       '../Assets/models/papa5.glb'
     ],
     stats: [
-      { label: 'Potasio', value: 76 },
-      { label: 'Energia', value: 72 },
-      { label: 'Agua', value: 79 }
+      { label: 'Tiempo de crecimiento', value: '90-120 dias' },
+      { label: 'Riego', value: '2-3 veces por semana' },
+      { label: 'Profundidad', value: '8-10 cm' }
     ]
   },
   {
@@ -70,9 +70,9 @@ const targetConfigs = [
       '../Assets/models/arracacha8.glb'
     ],
     stats: [
-      { label: 'Potasio', value: 76 },
-      { label: 'Energia', value: 72 },
-      { label: 'Agua', value: 79 }
+      { label: 'Tiempo de crecimiento', value: '8-12 meses' },
+      { label: 'Riego', value: 'Moderado' },
+      { label: 'Profundidad', value: '5-10 cm' }
     ]
   },
   {
@@ -87,9 +87,9 @@ const targetConfigs = [
       '../Assets/models/alverja3.glb'
     ],
     stats: [
-      { label: 'Potasio', value: 76 },
-      { label: 'Energia', value: 72 },
-      { label: 'Agua', value: 79 }
+      { label: 'Tiempo de crecimiento', value: '60-90 dias' },
+      { label: 'Riego', value: '2-3 veces por semana' },
+      { label: 'Profundidad', value: '3-5 cm' }
     ]
   },
   {
@@ -103,9 +103,9 @@ const targetConfigs = [
       '../Assets/models/yucaa2.glb'
     ],
     stats: [
-      { label: 'Potasio', value: 76 },
-      { label: 'Energia', value: 72 },
-      { label: 'Agua', value: 79 }
+      { label: 'Tiempo de crecimiento', value: '8-12 meses' },
+      { label: 'Riego', value: 'Moderado' },
+      { label: 'Profundidad', value: '5-10 cm' }
     ]
   }
 ];
@@ -212,8 +212,13 @@ const createInfoPanel = (config) => {
   ctx.shadowBlur = 0;
 
   ctx.fillStyle = '#00e5ff';
-  ctx.font = 'bold 32px Arial';
+  ctx.shadowColor = '#00e5ff';
+  ctx.shadowBlur = 15;
+
+  ctx.font = '700 34px Rajdhani';
   ctx.fillText(config.title, 20, 40);
+
+  ctx.shadowBlur = 0;
 
   ctx.strokeStyle = 'rgba(0,229,255,0.4)';
   ctx.lineWidth = 1;
@@ -222,30 +227,15 @@ const createInfoPanel = (config) => {
   ctx.lineTo(490, 60);
   ctx.stroke();
 
-  const drawBar = (label, value, max, y) => {
-    const percent = Math.round((value / max) * 100);
-
-    ctx.fillStyle = '#ffffff';
-    ctx.font = '20px Arial';
-    ctx.fillText(label, 20, y);
-
-    ctx.fillStyle = 'rgba(255,255,255,0.2)';
-    ctx.fillRect(200, y - 15, 250, 10);
-
-    const gradient = ctx.createLinearGradient(200, 0, 450, 0);
-    gradient.addColorStop(0, '#00e5ff');
-    gradient.addColorStop(1, '#7b61ff');
-
-    ctx.fillStyle = gradient;
-    ctx.fillRect(200, y - 15, (value / max) * 250, 10);
-
-    ctx.fillStyle = '#ffffff';
-    ctx.font = 'bold 18px Arial';
-    ctx.fillText(percent + '%', 460, y);
-  };
+  ctx.fillStyle = '#ffffff';
+  ctx.font = '500 22px Rajdhani';
 
   config.stats.forEach((stat, index) => {
-    drawBar(stat.label, stat.value, 100, 100 + index * 40);
+    ctx.fillText(
+      `${stat.label}: ${stat.value}`,
+      20,
+      100 + index * 45
+    );
   });
 
   const texture = new THREE.CanvasTexture(canvas);
