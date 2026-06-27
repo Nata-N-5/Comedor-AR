@@ -9,6 +9,7 @@ const cameraIcon = startButton.querySelector('.camera-icon');
 const changeButton = document.querySelector('#btn-change');
 const statusText = document.querySelector('#status-text');
 const scanEffect = document.querySelector('#scan-effect');
+const scannerBadgeIcon = document.querySelector('.scanner-badge img');
 
 const uiLoading = document.querySelector('#ui-loading');
 const uiCamera = document.querySelector('#ui-camera');
@@ -175,6 +176,9 @@ const setControlState = (state) => {
     startButton.disabled = true;
     cameraLabel.textContent = 'Iniciando camara AR';
     cameraIcon.src = '../Assets/svg/camera-ON.svg';
+    scannerBadgeIcon.src = '../Assets/svg/food-hot.svg';
+    scannerBadgeIcon.classList.remove('is-qr');
+    scannerBadgeIcon.classList.add('is-food');
     loadingTitle.textContent = 'Cargando';
     document.body.classList.add('ar-starting');
     document.body.classList.remove('ar-active', 'ar-paused');
@@ -194,6 +198,9 @@ const setControlState = (state) => {
   if (state === 'paused') {
     cameraLabel.textContent = 'Reanudar camara AR';
     cameraIcon.src = '../Assets/svg/camera-ON.svg';
+    scannerBadgeIcon.src = '../Assets/svg/qr.svg';
+    scannerBadgeIcon.classList.remove('is-food');
+    scannerBadgeIcon.classList.add('is-qr');
     document.body.classList.remove('ar-active');
     document.body.classList.add('ar-paused');
     document.body.classList.remove('ar-starting');
@@ -203,6 +210,9 @@ const setControlState = (state) => {
 
   cameraLabel.textContent = 'Iniciar camara AR';
   cameraIcon.src = '../Assets/svg/camera-ON.svg';
+  scannerBadgeIcon.src = '../Assets/svg/qr.svg';
+  scannerBadgeIcon.classList.remove('is-food');
+  scannerBadgeIcon.classList.add('is-qr');
   document.body.classList.remove('ar-active', 'ar-paused', 'ar-starting');
   loadingTitle.textContent = 'Listo para comenzar';
 };
@@ -718,7 +728,7 @@ const startAR = async () => {
 
   isTransitioning = true;
   setControlState('starting');
-  updateStatus('Solicitando acceso a la camara...');
+  updateStatus('Solicitando acceso a la camara... Por favor permite el acceso a la c&aacute;mara');
   uiLoading.style.display = 'grid';
   uiCamera.style.display = 'none';
 
