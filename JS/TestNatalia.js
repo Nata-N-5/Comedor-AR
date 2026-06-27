@@ -43,7 +43,7 @@ const targetConfigs = [
   },
   {
     targetIndex: 1,
-    title: 'PAPA',
+    title: 'PAPA: papa chorreada',
     statusLabel: 'papa',
     skeletonPath: '../Assets/models/papaw.glb',
     models: [
@@ -60,7 +60,7 @@ const targetConfigs = [
   },
   {
     targetIndex: 2,
-    title: 'ARRACACHA',
+    title: 'ARRACACHA: Chips de arracha',
     statusLabel: 'arracacha',
     skeletonPath: '../Assets/models/arracachaW.glb',
     models: [
@@ -78,7 +78,7 @@ const targetConfigs = [
   },
   {
     targetIndex: 3,
-    title: 'ARVEJA',
+    title: 'ARVEJA: Arveja cocida',
     statusLabel: 'Arveja',
     skeletonPath: '../Assets/models/alverjaW.glb',
     models: [
@@ -95,7 +95,7 @@ const targetConfigs = [
   },
   {
     targetIndex: 4,
-    title: 'YUCA',
+    title: 'YUCA: Yuca en salsa',
     statusLabel: 'yuca',
     skeletonPath: '../Assets/models/yucaaW.glb',
     models: [
@@ -106,25 +106,24 @@ const targetConfigs = [
     stats: [
       { label: 'Tiempo de crecimiento', value: '8-12 meses' },
       { label: 'Riego', value: 'Moderado' },
-      { label: 'Profundidad', value: '5-10 cm' }
+      { label: 'Profundidad', value: '5–15 cm' }
     ]
   },
   {
     targetIndex: 5,
-    title: 'CREMA DE ARVEJA',
+    title: 'ARVEJA: Crema de arveja',
     statusLabel: 'crema de arveja',
     skeletonPath: '../Assets/models/cremaW.glb',
     models: [
       '../Assets/models/crema.glb',
-      '../Assets/models/crema1.glb',
       '../Assets/models/crema2.glb',
       '../Assets/models/crema3.glb',
       '../Assets/models/crema4.glb'
     ],
     stats: [
-      { label: 'Tiempo de crecimiento', value: '8-12 meses' },
-      { label: 'Riego', value: 'Moderado' },
-      { label: 'Profundidad', value: '5-10 cm' }
+      { label: 'Tiempo de crecimiento', value: '60-90 dias' },
+      { label: 'Riego', value: '2-3 veces por semana' },
+      { label: 'Profundidad', value: '3-5 cm' }
     ]
   },
   {
@@ -138,9 +137,9 @@ const targetConfigs = [
       '../Assets/models/repollo2.glb'
     ],
     stats: [
-      { label: 'Tiempo de crecimiento', value: '8-12 meses' },
+      { label: 'Tiempo de crecimiento', value: '2–4 meses' },
       { label: 'Riego', value: 'Moderado' },
-      { label: 'Profundidad', value: '5-10 cm' }
+      { label: 'Profundidad', value: '1-2 cm' }
     ]
   }
 ];
@@ -736,7 +735,7 @@ const startAR = async () => {
     if (!mindarThree) {
       mindarThree = new MindARThree({
         container,
-        imageTargetSrc: '../Assets/Targets/targetsF.mind',
+        imageTargetSrc: '../Assets/Targets/targetsQ.mind',
         uiScanning: false,
         uiLoading: false,
         maxTrack: targetConfigs.length,
