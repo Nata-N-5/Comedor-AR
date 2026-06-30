@@ -460,9 +460,9 @@ const loadSkeleton = async (state) => {
     }
   });
 
-  state.skeletonModel.scale.set(1, 1, 1);
+  state.skeletonModel.scale.set(0.6, 0.6, 0.6);
   state.skeletonModel.position.set(0, 0, 0);
-  if (state.config.targetIndex !== 0) { // todos menos ZANAHORIA
+  if (state.config.targetIndex === 0) { // todos menos ZANAHORIA
   state.skeletonModel.rotation.set(90, 0, 0);
 } else {
   state.skeletonModel.rotation.set(0, 0, 0);
@@ -523,10 +523,10 @@ const loadModel = async (state, path) => {
     }
 
     state.currentModel = model;
-    state.currentModel.scale.set(1, 1, 1);
+    state.currentModel.scale.set(0.6, 0.6, 0.6);
     state.currentModel.position.set(0, 0, 0);
    // state.currentModel.rotation.set(0, 0, 0);
-    if (state.config.targetIndex !== 0) { // todos menos ZANAHORIA
+    if (state.config.targetIndex === 0) { // todos menos ZANAHORIA
   state.currentModel.rotation.set(Math.PI / 2, 0, 0);
 } else {
   state.currentModel.rotation.set(0, 0, 0);
