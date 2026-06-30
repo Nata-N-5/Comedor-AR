@@ -423,7 +423,7 @@ const pulseSkeleton = (state) => {
     if (!state.skeletonModel) return;
 
     const t = (time - start) * 0.005;
-    const scale = 0.4 + Math.sin(t) * 0.05;
+    const scale = 0.6 + Math.sin(t) * 0.05;
     state.skeletonModel.scale.set(scale, scale, scale);
     state.skeletonModel.rotation.y += 0.01;
 
@@ -460,7 +460,7 @@ const loadSkeleton = async (state) => {
     }
   });
 
-  state.skeletonModel.scale.set(0.4, 0.4, 0.4);
+  state.skeletonModel.scale.set(0.6, 0.6, 0.6);
   state.skeletonModel.position.set(0, 0, 0);
   if (state.config.targetIndex === 0) { // todos menos ZANAHORIA
   state.skeletonModel.rotation.set(90, 0, 0);
@@ -523,7 +523,7 @@ const loadModel = async (state, path) => {
     }
 
     state.currentModel = model;
-    state.currentModel.scale.set(0.4, 0.4, 0.4);
+    state.currentModel.scale.set(0.6, 0.6, 0.6);
     state.currentModel.position.set(0, 0, 0);
    // state.currentModel.rotation.set(0, 0, 0);
     if (state.config.targetIndex === 0) { // todos menos ZANAHORIA
