@@ -423,7 +423,7 @@ const pulseSkeleton = (state) => {
     if (!state.skeletonModel) return;
 
     const t = (time - start) * 0.005;
-    const scale = 1 + Math.sin(t) * 0.05;
+    const scale = 0.4 + Math.sin(t) * 0.05;
     state.skeletonModel.scale.set(scale, scale, scale);
     state.skeletonModel.rotation.y += 0.01;
 
