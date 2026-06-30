@@ -727,7 +727,7 @@ const startAR = async () => {
 
   isTransitioning = true;
   setControlState('starting');
-  updateStatus('Solicitando acceso a la camara... Por favor permite el acceso a la c&aacute;mara');
+  updateStatus('Solicitando acceso a la cámara... Por favor permite el acceso a la cámara');
   uiLoading.style.display = 'grid';
   uiCamera.style.display = 'none';
 
