@@ -107,7 +107,7 @@ const targetConfigs = [
     models: [
       '../Assets/models/yucaaC.glb',
       '../Assets/models/yuca1C.glb',
-      '../Assets/models/yucaa2.glb'
+      '../Assets/models/yucaa2C.glb'
     ],
     stats: [
       { label: 'Tiempo de crecimiento', value: '8-12 meses' },
