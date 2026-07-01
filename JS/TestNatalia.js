@@ -99,7 +99,7 @@ const targetConfigs = [
     statusLabel: 'yuca',
     skeletonPath: '../Assets/models/yucaaW.glb',
     models: [
-      '../Assets/models/yucaa.glb',
+      '../Assets/models/yucaaC.glb',
       '../Assets/models/yuca1C.glb',
       '../Assets/models/yucaa2.glb'
     ],
