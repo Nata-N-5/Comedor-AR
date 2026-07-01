@@ -100,7 +100,7 @@ const targetConfigs = [
     skeletonPath: '../Assets/models/yucaaW.glb',
     models: [
       '../Assets/models/yucaa.glb',
-      '../Assets/models/yucaa1.glb',
+      '../Assets/models/yuca1C.glb',
       '../Assets/models/yucaa2.glb'
     ],
     stats: [
