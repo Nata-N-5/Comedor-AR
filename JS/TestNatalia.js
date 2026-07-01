@@ -103,7 +103,7 @@ const targetConfigs = [
     targetIndex: 4,
     title: 'YUCA: Yuca en salsa',
     statusLabel: 'yuca',
-    skeletonPath: '../Assets/models/yucaaWC1.glb',
+    skeletonPath: '../Assets/models/yucaaWC.glb',
     models: [
       '../Assets/models/yucaaC.glb',
       '../Assets/models/yuca1C.glb',
