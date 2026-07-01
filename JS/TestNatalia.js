@@ -1,6 +1,7 @@
 import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
 import { MindARThree } from 'https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-three.prod.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import {DRACOloader} from 'three/examples/jsm/loaders/DRACOLoader.js';
 
 const container = document.querySelector('#ar-container');
 const startButton = document.querySelector('#start-ar');
@@ -22,6 +23,11 @@ const eatSound = new Audio('../Assets/eat.mp3');
 const gltfLoader = new GLTFLoader();
 const smokeTexture = new THREE.TextureLoader().load('../Assets/img/Smoke.png');
 smokeTexture.colorSpace = THREE.SRGBColorSpace;
+
+const dLoader = new DRACOLoader();
+dLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.7/');
+dLoader.setDecoderConfig({type : 'js'});
+gltfLoader.setDRACOLoader(dLoader);
 
 const targetConfigs = [
   {
@@ -97,7 +103,7 @@ const targetConfigs = [
     targetIndex: 4,
     title: 'YUCA: Yuca en salsa',
     statusLabel: 'yuca',
-    skeletonPath: '../Assets/models/yucaaW.glb',
+    skeletonPath: '../Assets/models/yucaaWC1.glb',
     models: [
       '../Assets/models/yucaaC.glb',
       '../Assets/models/yuca1C.glb',
