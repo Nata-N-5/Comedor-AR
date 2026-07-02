@@ -371,7 +371,7 @@ const loadSkeleton = async (state) => {
   pulseSkeleton(state);
 };
 
-const fadeOutSkeleton = (state, duration = TIMING.skeletonFadeMs) => {
+const fadeOutSkeleton = (state, duration = TIMING.pulseFadeMs) => {
   if (!state.skeletonModel) return;
 
   const skeleton = state.skeletonModel;
@@ -617,7 +617,7 @@ const startAR = async () => {
     if (!mindarThree) {
       mindarThree = new MindARThree({
         container: dom.container,
-        imageTargetSrc: '../Assets/Targets/targetsQ.mind',
+        imageTargetSrc: '../Assets/Targets/targetsQR.mind',
         uiScanning: false,
         uiLoading: false,
         maxTrack: targetConfigs.length,

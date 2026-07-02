@@ -1,6 +1,6 @@
 export const targetConfigs = [
   {
-    targetIndex: 1,
+    targetIndex: 0,
     title: 'PAPA: papa chorreada',
     statusLabel: 'papa',
     skeletonPath: '../Assets/models/Papa/papaWireframe.glb',
@@ -16,7 +16,7 @@ export const targetConfigs = [
     ],
   },
   {
-    targetIndex: 2,
+    targetIndex: 1,
     title: 'ARRACACHA: Chips de arracacha',
     statusLabel: 'arracacha',
     skeletonPath: '../Assets/models/Arracacha/arracachaWireframe.glb',
@@ -32,7 +32,7 @@ export const targetConfigs = [
     ],
   },
   {
-    targetIndex: 3,
+    targetIndex: 2,
     title: 'ARVEJA: Arveja cocida',
     statusLabel: 'arveja',
     skeletonPath: '../Assets/models/Alverja/alverjaWireframe.glb',
@@ -48,7 +48,7 @@ export const targetConfigs = [
     ],
   },
   {
-    targetIndex: 4,
+    targetIndex: 3,
     title: 'YUCA: Yuca en salsa',
     statusLabel: 'yuca',
     skeletonPath: '../Assets/models/Yuca/yucaWireframe.glb',
@@ -64,7 +64,7 @@ export const targetConfigs = [
     ],
   },
   {
-    targetIndex: 5,
+    targetIndex: 4,
     title: 'ARVEJA: Crema de arveja',
     statusLabel: 'crema de arveja',
     skeletonPath: '../Assets/models/Crema/cremaWireframe.glb',
@@ -80,8 +80,8 @@ export const targetConfigs = [
     ],
   },
   {
-    targetIndex: 6,
-    title: 'REPOLLO',
+    targetIndex: 5,
+    title: 'REPOLLO: rollitos de repollo',
     statusLabel: 'repollo',
     skeletonPath: '../Assets/models/Repollo/repolloWireframe.glb',
     scale: .8,
@@ -92,6 +92,38 @@ export const targetConfigs = [
     stats: [
       { label: 'Tiempo de crecimiento', value: '2–4 meses' },
       { label: 'Riego', value: 'Moderado' },
+      { label: 'Profundidad', value: '1-2 cm' },
+    ],
+  },
+  {
+    targetIndex: 6,
+    title: 'TOMATE: Bruschettas',
+    statusLabel: 'tomate',
+    skeletonPath: '../Assets/models/Tomate/bruschettasWireframe.glb',
+    scale: .8,
+    models: [
+      '../Assets/models/Tomate/bruschettasFull.glb',
+      '../Assets/models/Tomate/bruschettas2.glb'
+    ],
+    stats: [
+      { label: 'Tiempo de crecimiento', value: '90–120 días' },
+      { label: 'Riego', value: 'Moderado' },
+      { label: 'Profundidad', value: '0.5 - 1 cm' },
+    ],
+  },
+  {
+    targetIndex: 7,
+    title: 'ESPINACA:Crema de espinaca',
+    statusLabel: 'espinaca',
+    skeletonPath: '../Assets/models/Espinaca/cremaespinacaWireframe.glb',
+    scale: .8,
+    models: [
+      '../Assets/models/Espinaca/cremaespinacaFull.glb',
+      '../Assets/models/Espinaca/cremaespinaca2.glb'
+    ],
+    stats: [
+      { label: 'Tiempo de crecimiento', value: '40–60 días' },
+      { label: 'Riego', value: 'Frecuente' },
       { label: 'Profundidad', value: '1-2 cm' },
     ],
   },
