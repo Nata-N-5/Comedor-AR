@@ -617,7 +617,7 @@ const startAR = async () => {
     if (!mindarThree) {
       mindarThree = new MindARThree({
         container: dom.container,
-        imageTargetSrc: '../Assets/Targets/targetsQR.mind',
+        imageTargetSrc: '../Assets/Targets/targetsQ.mind',
         uiScanning: false,
         uiLoading: false,
         maxTrack: targetConfigs.length,
