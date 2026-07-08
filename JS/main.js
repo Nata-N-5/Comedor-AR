@@ -196,6 +196,20 @@ const createInfoPanel = (config) => {
   return panel;
 };
 
+const sessionId = crypto.randomUUID();
+const callApiEndpoint = (target) => {
+  fetch("https://register-interaction-mk3q34a5h-memo-studios.vercel.app/api/register", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      experiencia: "comedor-ar",
+      target: target,
+      session: sessionId,
+      dispositivo: /Mobi|Android/i.test(navigator.userAgent) ? "mobile" : "desktop"
+    })
+  });
+};
+
 const createParticles = (state, position) => {
   const particles = [];
 
@@ -506,6 +520,7 @@ const handleTargetFound = (state) => {
     state.anchor.group.add(state.infoPanel);
   }
 
+  callApiEndpoint(state.config.title);
   dom.scanEffect.style.display = 'block';
 
   if (state.loadTimeout || state.currentModel || state.skeletonModel) return;
