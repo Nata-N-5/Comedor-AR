@@ -202,10 +202,10 @@ const callApiEndpoint = (target) => {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      experiencia: "comedor-ar",
+      interactive: "comedor-ar",
       target: target,
       session: sessionId,
-      dispositivo: /Mobi|Android/i.test(navigator.userAgent) ? "mobile" : "desktop"
+      device: /Mobi|Android/i.test(navigator.userAgent) ? "mobile" : "desktop"
     })
   });
 };
