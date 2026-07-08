@@ -198,7 +198,7 @@ const createInfoPanel = (config) => {
 
 const sessionId = crypto.randomUUID();
 const callApiEndpoint = (target) => {
-  fetch("https://register-interaction-mk3q34a5h-memo-studios.vercel.app/api/register", {
+  fetch("https://register-interaction-api-psi.vercel.app/api/register", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
