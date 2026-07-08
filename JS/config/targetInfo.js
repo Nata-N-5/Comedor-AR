@@ -4,7 +4,7 @@ export const targetConfigs = [
     title: 'PAPA: papa chorreada',
     statusLabel: 'papa',
     skeletonPath: '../Assets/models/Papa/papaWireframe.glb',
-    scale: .6,
+    scale: .8,
     models: [
       '../Assets/models/Papa/papaFull.glb',
       '../Assets/models/Papa/papa2.glb'
@@ -20,7 +20,7 @@ export const targetConfigs = [
     title: 'ARRACACHA: Chips de arracacha',
     statusLabel: 'arracacha',
     skeletonPath: '../Assets/models/Arracacha/arracachaWireframe.glb',
-    scale: .5,
+    scale: .8,
     models: [
       '../Assets/models/Arracacha/arracachaFull.glb',
       '../Assets/models/Arracacha/arracacha2.glb'
@@ -36,7 +36,7 @@ export const targetConfigs = [
     title: 'ARVEJA: Arveja cocida',
     statusLabel: 'arveja',
     skeletonPath: '../Assets/models/Alverja/alverjaWireframe.glb',
-    scale: 0.6,
+    scale: 0.8,
     models: [
       '../Assets/models/Alverja/alverjaFull.glb',
       '../Assets/models/Alverja/alverja2.glb'
@@ -52,7 +52,7 @@ export const targetConfigs = [
     title: 'YUCA: Yuca en salsa',
     statusLabel: 'yuca',
     skeletonPath: '../Assets/models/Yuca/yucaWireframe.glb',
-    scale: .5,
+    scale: .8,
     models: [
       '../Assets/models/Yuca/yucaFull.glb',
       '../Assets/models/Yuca/yuca2.glb'
@@ -68,7 +68,7 @@ export const targetConfigs = [
     title: 'ARVEJA: Crema de arveja',
     statusLabel: 'crema de arveja',
     skeletonPath: '../Assets/models/Crema/cremaWireframe.glb',
-    scale: .4,
+    scale: .8,
     models: [
       '../Assets/models/Crema/cremaFull.glb',
       '../Assets/models/Crema/crema2.glb'
