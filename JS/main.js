@@ -197,6 +197,7 @@ const createInfoPanel = (config) => {
 };
 
 const sessionId = crypto.randomUUID();
+
 const callApiEndpoint = (target) => {
   fetch("https://register-interaction-api-psi.vercel.app/api/register", {
     method: "POST",
@@ -205,7 +206,8 @@ const callApiEndpoint = (target) => {
       interactive: "comedor-ar",
       target: target,
       session: sessionId,
-      device: /Mobi|Android/i.test(navigator.userAgent) ? "mobile" : "desktop"
+      device: /Mobi|Android/i.test(navigator.userAgent) ? "mobile" : "desktop",
+      os: navigator.userAgent
     })
   });
 };
